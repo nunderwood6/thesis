@@ -17193,7 +17193,7 @@ var casesWithAnnotations = _$massacreAnnotations_4.map(d => d.case);
 var massacreData; //adjust source for src/build
 
 var massacreDataPath = "./assets/circle-positions.json";
-var pathPrefix = "..";
+var pathPrefix = ".";
 if (location.hostname == "localhost") pathPrefix = ".";
 _$d3Min_8.json(massacreDataPath).then(function (data) {
   massacreData = data;
