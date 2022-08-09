@@ -17234,13 +17234,13 @@ var rasterHeight = rasterBounds[1][1] - rasterBounds[0][1];
 var rasterOrigin = [rasterBounds[0][0], rasterBounds[0][1]]; //append raster backgrounds
 // all
 
-svgInner.append("image").attr("href", pathPrefix + "/assets/img/dot_all.jpg").attr("class", "allDot").attr("x", rasterOrigin[0]).attr("y", rasterOrigin[1]).attr("width", rasterWidth + "px").attr("height", rasterHeight + "px").attr("opacity", "1"); // focus-only
+svgInner.append("image").attr("href", pathPrefix + "/assets/img/dot_all.jpg").attr("xlink:href", pathPrefix + "/assets/img/dot_all.jpg").attr("class", "allDot").attr("x", rasterOrigin[0]).attr("y", rasterOrigin[1]).attr("width", rasterWidth + "px").attr("height", rasterHeight + "px").attr("opacity", "1"); // focus-only
 
-svgInner.append("image").attr("href", pathPrefix + "/assets/img/focus-only.jpg").attr("class", "focusOnly").attr("x", computedBox[0][0]).attr("y", computedBox[0][1]).attr("width", focusWidth).attr("height", focusHeight).attr("opacity", "1"); // indigenous
+svgInner.append("image").attr("href", pathPrefix + "/assets/img/focus-only.jpg").attr("xlink:href", pathPrefix + "/assets/img/focus-only.jpg").attr("class", "focusOnly").attr("x", computedBox[0][0]).attr("y", computedBox[0][1]).attr("width", focusWidth).attr("height", focusHeight).attr("opacity", "1"); // indigenous
 
-svgInner.append("image").attr("href", pathPrefix + "/assets/img/indigenous-only.jpg").attr("class", "indigenousOnly").attr("x", computedBox[0][0]).attr("y", computedBox[0][1]).attr("width", focusWidth).attr("height", focusHeight).attr("opacity", "0"); // binary
+svgInner.append("image").attr("href", pathPrefix + "/assets/img/indigenous-only.jpg").attr("xlink:href", pathPrefix + "/assets/img/indigenous-only.jpg").attr("class", "indigenousOnly").attr("x", computedBox[0][0]).attr("y", computedBox[0][1]).attr("width", focusWidth).attr("height", focusHeight).attr("opacity", "0"); // binary
 
-var binaryImg = svgInner.append("image").attr("href", pathPrefix + "/assets/img/binary.jpg").attr("class", "binary").attr("x", computedBox[0][0]).attr("y", computedBox[0][1]).attr("width", focusWidth).attr("height", focusHeight).attr("opacity", "0"); //draw municipios
+var binaryImg = svgInner.append("image").attr("href", pathPrefix + "/assets/img/binary.jpg").attr("xlink:href", pathPrefix + "/assets/img/binary.jpg").attr("class", "binary").attr("x", computedBox[0][0]).attr("y", computedBox[0][1]).attr("width", focusWidth).attr("height", focusHeight).attr("opacity", "0"); //draw municipios
 
 var municipios = svgInner.append("g").selectAll(".municipio").data(municipioData).enter().append("path").attr("d", pathGuate).attr("class", "municipio").attr("id", function (d) {
   return "m" + d.properties["codigo_mun"];
