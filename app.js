@@ -17412,31 +17412,43 @@ var defenders = magicMap.selectAll(".defenders");
 var updateMap = {
   fadeFocus: function () {
     focusOnly.transition("fade in focus").duration(500).style("opacity", 1);
+    focusOnly.selectAll("p").style("pointer-events", "auto");
     indigenousOnly.transition("fade out indigenous backward").duration(500).style("opacity", 0);
+    indigenousOnly.selectAll("p").style("pointer-events", "none");
     homePoints.transition("fade in homes").duration(500).attr("opacity", 1);
   },
   fadeIndigenous: function () {
     //fade out homes
     homePoints.transition("fade out homes").duration(500).attr("opacity", 0);
     focusOnly.transition("fade out focus").duration(500).style("opacity", 0);
+    focusOnly.selectAll("p").style("pointer-events", "none");
     binary.transition("fade out binary").duration(500).style("opacity", 0);
+    binary.selectAll("p").style("pointer-events", "none");
     indigenousOnly.transition("fade in indigenous").duration(500).style("opacity", 1);
+    indigenousOnly.selectAll("p").style("pointer-events", "auto");
   },
   fadeBinaryLabeled: function () {
     indigenousOnly.transition("fade out indigenous forward").duration(500).style("opacity", 0);
+    indigenousOnly.selectAll("p").style("pointer-events", "none");
     binary.transition("fade in binary").duration(500).style("opacity", 1);
+    binary.selectAll("p").style("pointer-events", "auto");
     homePoints.transition("fade in homes").duration(500).attr("opacity", 1);
   },
   fadeOutTimeline: function () {
     binary.style("opacity", 1);
+    binary.selectAll("p").style("pointer-events", "auto");
     homePoints.attr("opacity", 1);
     timelineElements.style("opacity", 0);
   },
   fadeTimeline: function () {
     binary.transition("ensure clean timeline").duration(500).style("opacity", 0);
+    binary.selectAll("p").style("pointer-events", "none");
     indigenousOnly.transition("ensure clean timeline").duration(500).style("opacity", 0);
+    indigenousOnly.selectAll("p").style("pointer-events", "none");
     focusOnly.transition("ensure clean timeline").duration(500).style("opacity", 0);
+    indigenousOnly.selectAll("p").style("pointer-events", "none");
     timelineElements.style("opacity", 1);
+    homePoints.attr("opacity", 0);
   },
   zoomOutFull: function () {
     animationIndex = 0;
@@ -17451,9 +17463,9 @@ var updateMap = {
     });
   },
   zoomChorti: function () {
-    binary.transition("ensure clean timeline").duration(500).style("opacity", 0);
-    indigenousOnly.transition("ensure clean timeline").duration(500).style("opacity", 0);
-    focusOnly.transition("ensure clean timeline").duration(500).style("opacity", 0);
+    binary.transition("ensure clean timeline").duration(500).style("opacity", 0).style("pointer-events", "none");
+    indigenousOnly.transition("ensure clean timeline").duration(500).style("opacity", 0).style("pointer-events", "none");
+    focusOnly.transition("ensure clean timeline").duration(500).style("opacity", 0).style("pointer-events", "none");
     animationIndex = 1; //fade out labels
 
     svg.selectAll(".qeqchi,.Jakelin").transition("fade labels out chorti").duration(500).attr("opacity", 0);

@@ -33,6 +33,7 @@ p:last-child {
 }
 a {
   color: #fff;
+  text-decoration-thickness: 1px;
 }
 div.opener {
   background-image: url(./assets/img/palm_invasion.jpg);
@@ -107,6 +108,7 @@ div.magic-map.outer.exiting {
 div.magic-map.outer.active {
   animation: fade-in 0.2s linear;
   opacity: 1;
+  z-index: 1;
 }
 div.magic-map.outer div.inner {
   width: 100%;
@@ -117,18 +119,21 @@ div.magic-map.outer div.inner {
   max-width: 95.68vh;
 }
 div.magic-map.outer div.inner div.ai2html {
-  z-index: 2;
   position: absolute;
   left: 0px;
   top: 0px;
   width: 100%;
   height: 100%;
+  z-index: 2;
+  pointer-events: none;
 }
 div.magic-map.outer div.inner div.ai2html img {
   opacity: 0;
+  pointer-events: none;
 }
 div.magic-map.outer div.inner div.ai2html p {
-  z-index: 2;
+  position: relative;
+  z-index: 3;
   text-shadow: -1px -1px 0.5px rgba(51, 51, 51, 0.5), 1px -1px 0.5px rgba(51, 51, 51, 0.5), -1px 1px 0.5px rgba(51, 51, 51, 0.5), 1px 1px 0.5px rgba(51, 51, 51, 0.5);
 }
 @media screen and (min-width: 800px) {
@@ -226,13 +231,13 @@ div.magic-map.outer .axis text {
   /*font-weight: bold;*/
 }
 div.magic-map.outer div.labels {
-  z-index: 3;
   position: absolute;
   width: 100%;
   height: 100%;
   font-family: proxima-nova, sans-serif;
 }
 div.magic-map.outer div.labels p {
+  z-index: 3;
   position: absolute;
   color: #fff;
   font-weight: bold;
@@ -321,11 +326,14 @@ span.ceh {
   }
 }
 .slide {
+  z-index: 1;
   clear: right;
   position: relative;
   overflow: hidden;
+  pointer-events: none;
 }
 .slide .backdrop {
+  pointer-events: auto;
   position: absolute;
   z-index: -2;
   width: 100vw;
@@ -336,7 +344,8 @@ span.ceh {
   animation: none;
 }
 .slide .backdrop.credit {
-  z-index: 0;
+  pointer-events: auto;
+  z-index: 1;
   position: absolute;
   width: auto;
   height: auto;
@@ -370,9 +379,15 @@ span.ceh {
   animation: fade-in 0.2s linear;
   opacity: 1;
 }
-.slide .text {
+.slide .content {
+  z-index: 10;
   position: relative;
-  z-index: 1;
+  pointer-events: auto;
+}
+.slide .text {
+  pointer-events: auto;
+  position: relative;
+  z-index: 5;
   clear: right;
   font-size: 17px;
   padding: 18px;
@@ -383,6 +398,10 @@ span.ceh {
   margin: 5vh 30px 90vh;
   width: 35%;
   float: right;
+}
+.slide .text p {
+  position: relative;
+  z-index: 10;
 }
 @media (max-width: 910px) {
   .slide .text {
@@ -430,10 +449,14 @@ span.ceh {
   justify-content: center;
   align-items: center;
   background-color: #000;
+  z-index: 6;
+}
+.slide.chapter a {
+  text-decoration-thickness: 1px;
 }
 .slide.chapter .background-text {
+  pointer-events: auto;
   text-align: left;
-  z-index: 1;
   color: #fff;
   padding: 20px;
   max-width: 600px;
@@ -469,6 +492,11 @@ div.ai2html {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
+  pointer-events: auto;
+}
+div.ai2html a {
+  text-decoration-thickness: 0.75px;
 }
 div.ai2html .g-callout {
   border-radius: 5px;
@@ -573,6 +601,9 @@ section.ai2html.activeSecond .g-second {
   background-color: rgba(173, 168, 64, 0.7);
   border-radius: 5px;
   padding: 5px;
+}
+.slide.portrait {
+  z-index: 0;
 }
 .slide.portrait .backdrop {
   background-color: #ccc;
