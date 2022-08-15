@@ -643,3 +643,55 @@ section.ai2html.activeSecond .g-second {
     font-size: 10px;
   }
 }
+footer {
+  font-family: proxima-nova, sans-serif;
+  background: #111;
+  color: #fff;
+  display: block;
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+}
+footer a {
+  text-decoration-thickness: auto;
+}
+footer .about {
+  padding: 44px 20px;
+}
+footer h1 {
+  padding-top: 50px;
+  text-align: center;
+  margin: 0 auto;
+}
+footer h4 {
+  font-size: 1.1rem;
+  margin: 0 0 11px 0;
+  text-transform: uppercase;
+}
+footer .constrained {
+  max-width: 850px;
+  margin: auto;
+}
+footer .side-by-side {
+  display: flex;
+  margin-bottom: 22px;
+}
+footer .side-by-side .block {
+  padding-right: 12px;
+}
+@media (max-width: 910px) {
+  footer .side-by-side {
+    display: block;
+  }
+}
+footer .side-by-side > * {
+  flex: 0 0 50%;
+}
+footer .credits {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+footer .credits li {
+  margin-bottom: 0.5rem;
+}
