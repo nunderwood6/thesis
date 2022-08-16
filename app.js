@@ -18011,9 +18011,10 @@ window.onload = function () {
 };
 
 var _$main_20 = {};
-// window.onbeforeunload = function () {
-//   return window.scrollTo(0, 0);
-// }
+window.onbeforeunload = function () {
+  return window.scrollTo(0, 0);
+};
+
 /* removed: var _$$_17 = require("./lib/qsa"); */; // setup map
 
 
