@@ -79,7 +79,7 @@
     }
   },
   "description": "",
-  "datePublished": "2022-08-16T01:05:47.168Z"
+  "datePublished": "2022-08-24T01:26:52.671Z"
 }
 </script>
 
@@ -160,7 +160,11 @@ WebFont.load({
   	<div class="opener">	
   		<h1>Memory and Migration</h1>
   		<h2>The lands and rights of Indigenous peoples in Guatemala have long been trampled by a tiny elite, foreign corporations, and the US government. Until the cycle of invasion and exploitation is broken, people will continue to seek a dignified life elsewhere—and die for daring to do so.</h2>
-  		<h4>By Nick Underwood | August 2022</h4>
+  		<h4>
+        By Nick Underwood | August 2022
+        <br>
+        <a href="https://nick-underwood.com/tesis/">Leer en español</a>
+        </h4>
       <p>Photo: Fabio Erdos/ActionAid</p>
   	</div>
 
@@ -4522,7 +4526,7 @@ WebFont.load({
       
       >
     <div class="content">
-      <p>The 1954 coup kicked off a spiral of violence that would lead to four decades of repression and terror. With democratic progress stifled, guerrilla movements sprang up, and a series of brutal military governments waged war against its own citizens. An estimated 200,000 people were killed and disappeared, and more than 1.5 million displaced during the conflict, according to a U.N.-sponsored truth commission called the <a href="La Comisión para el Esclarecimiento Histórico">Historical Clarification Committee</a><span class="widont">&nbsp;</span>(CEH).</p>
+      <p>The 1954 coup kicked off a spiral of violence that would lead to four decades of repression and terror. With democratic progress stifled, guerrilla movements sprang up, and a series of brutal military governments waged war against its own citizens. An estimated 200,000 people were killed and disappeared, and more than 1.5 million displaced during the conflict, according to a U.N.-sponsored truth commission called the <a href="https://www.centrodememoriahistorica.gov.co/descargas/guatemala-memoria-silencio/guatemala-memoria-del-silencio.pdf">Historical Clarification Committee</a><span class="widont">&nbsp;</span>(CEH).</p>
 
     </div>
     
@@ -5219,6 +5223,13 @@ Genocide also devastated northern Huehuetenango in 1982, where the Chuj and Q&#8
       lazy.forEach(function(img) {
         img.setAttribute("data-src", img.getAttribute("src"));
         img.removeAttribute("src", "");
+      });
+
+      //make links open in new tab
+      var links = Array.prototype.slice.call(document.querySelectorAll("a"));
+      console.log(links);
+      links.forEach(function(link) {
+        link.setAttribute("target", "_blank");
       });
     </script>
     <script src="app.js" async></script>
