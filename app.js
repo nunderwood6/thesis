@@ -17236,7 +17236,7 @@ var rasterOrigin = [rasterBounds[0][0], rasterBounds[0][1]]; //append raster bac
 
 svgInner.append("image").attr("href", pathPrefix + "/assets/img/dot_all.jpg").attr("xlink:href", pathPrefix + "/assets/img/dot_all.jpg").attr("class", "allDot").attr("x", rasterOrigin[0]).attr("y", rasterOrigin[1]).attr("width", rasterWidth + "px").attr("height", rasterHeight + "px").attr("opacity", "1"); // focus-only
 
-svgInner.append("image").attr("href", pathPrefix + "/assets/img/focus-only.jpg").attr("xlink:href", pathPrefix + "/assets/img/focus-only.jpg").attr("class", "focusOnly").attr("x", computedBox[0][0]).attr("y", computedBox[0][1]).attr("width", focusWidth).attr("height", focusHeight).attr("opacity", "1"); // indigenous
+var focusOnlyMap = svgInner.append("image").attr("href", pathPrefix + "/assets/img/focus-only.jpg").attr("xlink:href", pathPrefix + "/assets/img/focus-only.jpg").attr("class", "focusOnlyMap").attr("x", computedBox[0][0]).attr("y", computedBox[0][1]).attr("width", focusWidth).attr("height", focusHeight).attr("opacity", "1"); // indigenous
 
 svgInner.append("image").attr("href", pathPrefix + "/assets/img/indigenous-only.jpg").attr("xlink:href", pathPrefix + "/assets/img/indigenous-only.jpg").attr("class", "indigenousOnly").attr("x", computedBox[0][0]).attr("y", computedBox[0][1]).attr("width", focusWidth).attr("height", focusHeight).attr("opacity", "0"); // binary
 
@@ -17447,6 +17447,7 @@ var updateMap = {
     indigenousOnly.selectAll("p").style("pointer-events", "none");
     focusOnly.transition("ensure clean timeline").duration(500).style("opacity", 0);
     indigenousOnly.selectAll("p").style("pointer-events", "none");
+    focusOnlyMap.style("opacity", 0);
     timelineElements.style("opacity", 1);
     homePoints.attr("opacity", 0);
   },
@@ -17466,6 +17467,7 @@ var updateMap = {
     binary.transition("ensure clean timeline").duration(500).style("opacity", 0).style("pointer-events", "none");
     indigenousOnly.transition("ensure clean timeline").duration(500).style("opacity", 0).style("pointer-events", "none");
     focusOnly.transition("ensure clean timeline").duration(500).style("opacity", 0).style("pointer-events", "none");
+    focusOnlyMap.style("opacity", 0);
     animationIndex = 1; //fade out labels
 
     svg.selectAll(".qeqchi,.Jakelin").transition("fade labels out chorti").duration(500).attr("opacity", 0);
