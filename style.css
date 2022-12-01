@@ -70,11 +70,6 @@ div.opener h4 {
   width: 100%;
   text-align: center;
 }
-div.opener h4 a {
-  display: inline-block;
-  margin-top: 5px;
-  font-style: italic;
-}
 div.opener p {
   position: absolute;
   right: 1px;
@@ -248,6 +243,7 @@ div.magic-map.outer div.labels p {
   font-weight: bold;
 }
 div.magic-map.outer div.key {
+  opacity: 0;
   z-index: 3;
   position: absolute;
   right: 15px;
@@ -606,6 +602,10 @@ section.ai2html.activeSecond .g-second {
   background-color: rgba(173, 168, 64, 0.7);
   border-radius: 5px;
   padding: 5px;
+}
+#g-_binary-small span.ten {
+  font-size: 10px;
+  line-height: 10px;
 }
 .slide.portrait {
   z-index: 0;

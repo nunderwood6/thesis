@@ -17236,7 +17236,7 @@ var rasterOrigin = [rasterBounds[0][0], rasterBounds[0][1]]; //append raster bac
 
 svgInner.append("image").attr("href", pathPrefix + "/assets/img/dot_all.jpg").attr("xlink:href", pathPrefix + "/assets/img/dot_all.jpg").attr("class", "allDot").attr("x", rasterOrigin[0]).attr("y", rasterOrigin[1]).attr("width", rasterWidth + "px").attr("height", rasterHeight + "px").attr("opacity", "1"); // focus-only
 
-var focusOnlyMap = svgInner.append("image").attr("href", pathPrefix + "/assets/img/focus-only.jpg").attr("xlink:href", pathPrefix + "/assets/img/focus-only.jpg").attr("class", "focusOnlyMap").attr("x", computedBox[0][0]).attr("y", computedBox[0][1]).attr("width", focusWidth).attr("height", focusHeight).attr("opacity", "1"); // indigenous
+svgInner.append("image").attr("href", pathPrefix + "/assets/img/focus-only.jpg").attr("xlink:href", pathPrefix + "/assets/img/focus-only.jpg").attr("class", "focusOnly").attr("x", computedBox[0][0]).attr("y", computedBox[0][1]).attr("width", focusWidth).attr("height", focusHeight).attr("opacity", "1"); // indigenous
 
 svgInner.append("image").attr("href", pathPrefix + "/assets/img/indigenous-only.jpg").attr("xlink:href", pathPrefix + "/assets/img/indigenous-only.jpg").attr("class", "indigenousOnly").attr("x", computedBox[0][0]).attr("y", computedBox[0][1]).attr("width", focusWidth).attr("height", focusHeight).attr("opacity", "0"); // binary
 
@@ -17411,28 +17411,28 @@ var binary = magicMap.selectAll(".binary");
 var defenders = magicMap.selectAll(".defenders");
 var updateMap = {
   fadeFocus: function () {
-    focusOnly.transition("fade in focus").duration(500).ease(_$d3Min_8.easeLinear).style("opacity", 1);
+    focusOnly.transition("fade in focus").duration(500).style("opacity", 1);
     focusOnly.selectAll("p").style("pointer-events", "auto");
-    indigenousOnly.transition("fade out indigenous backward").duration(500).ease(_$d3Min_8.easeLinear).style("opacity", 0);
+    indigenousOnly.transition("fade out indigenous backward").duration(500).style("opacity", 0);
     indigenousOnly.selectAll("p").style("pointer-events", "none");
-    homePoints.transition("fade in homes").duration(500).ease(_$d3Min_8.easeLinear).attr("opacity", 1);
+    homePoints.transition("fade in homes").duration(500).attr("opacity", 1);
   },
   fadeIndigenous: function () {
     //fade out homes
-    homePoints.transition("fade out homes").duration(500).ease(_$d3Min_8.easeLinear).attr("opacity", 0);
-    focusOnly.transition("fade out focus").duration(500).ease(_$d3Min_8.easeLinear).style("opacity", 0);
+    homePoints.transition("fade out homes").duration(500).attr("opacity", 0);
+    focusOnly.transition("fade out focus").duration(500).style("opacity", 0);
     focusOnly.selectAll("p").style("pointer-events", "none");
-    binary.transition("fade out binary").duration(500).ease(_$d3Min_8.easeLinear).style("opacity", 0);
+    binary.transition("fade out binary").duration(500).style("opacity", 0);
     binary.selectAll("p").style("pointer-events", "none");
-    indigenousOnly.transition("fade in indigenous").duration(500).ease(_$d3Min_8.easeLinear).style("opacity", 1);
+    indigenousOnly.transition("fade in indigenous").duration(500).style("opacity", 1);
     indigenousOnly.selectAll("p").style("pointer-events", "auto");
   },
   fadeBinaryLabeled: function () {
-    indigenousOnly.transition("fade out indigenous forward").duration(500).ease(_$d3Min_8.easeLinear).style("opacity", 0);
+    indigenousOnly.transition("fade out indigenous forward").duration(500).style("opacity", 0);
     indigenousOnly.selectAll("p").style("pointer-events", "none");
-    binary.transition("fade in binary").duration(500).ease(_$d3Min_8.easeLinear).style("opacity", 1);
+    binary.transition("fade in binary").duration(500).style("opacity", 1);
     binary.selectAll("p").style("pointer-events", "auto");
-    homePoints.transition("fade in homes").duration(500).ease(_$d3Min_8.easeLinear).attr("opacity", 1);
+    homePoints.transition("fade in homes").duration(500).attr("opacity", 1);
   },
   fadeOutTimeline: function () {
     binary.style("opacity", 1);
@@ -17441,12 +17441,11 @@ var updateMap = {
     timelineElements.style("opacity", 0);
   },
   fadeTimeline: function () {
-    binary.transition("ensure clean timeline").duration(500).ease(_$d3Min_8.easeLinear).style("opacity", 0);
+    binary.transition("ensure clean timeline").duration(500).style("opacity", 0);
     binary.selectAll("p").style("pointer-events", "none");
-    indigenousOnly.transition("ensure clean timeline").duration(500).ease(_$d3Min_8.easeLinear).style("opacity", 0);
+    indigenousOnly.transition("ensure clean timeline").duration(500).style("opacity", 0);
     indigenousOnly.selectAll("p").style("pointer-events", "none");
-    focusOnly.transition("ensure clean timeline").duration(500).ease(_$d3Min_8.easeLinear).style("opacity", 0);
-    focusOnlyMap.style("opacity", 0);
+    focusOnly.transition("ensure clean timeline").duration(500).style("opacity", 0);
     indigenousOnly.selectAll("p").style("pointer-events", "none");
     timelineElements.style("opacity", 1);
     homePoints.attr("opacity", 0);
@@ -17467,7 +17466,6 @@ var updateMap = {
     binary.transition("ensure clean timeline").duration(500).style("opacity", 0).style("pointer-events", "none");
     indigenousOnly.transition("ensure clean timeline").duration(500).style("opacity", 0).style("pointer-events", "none");
     focusOnly.transition("ensure clean timeline").duration(500).style("opacity", 0).style("pointer-events", "none");
-    focusOnlyMap.style("opacity", 0);
     animationIndex = 1; //fade out labels
 
     svg.selectAll(".qeqchi,.Jakelin").transition("fade labels out chorti").duration(500).attr("opacity", 0);
