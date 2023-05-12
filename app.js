@@ -17409,6 +17409,7 @@ var focusOnly = magicMap.selectAll(".focusOnly");
 var indigenousOnly = magicMap.selectAll(".indigenousOnly");
 var binary = magicMap.selectAll(".binary");
 var defenders = magicMap.selectAll(".defenders");
+var binaryKey = magicMap.select(".key.binary");
 var updateMap = {
   fadeFocus: function () {
     focusOnly.transition("fade in focus").duration(500).style("opacity", 1);
